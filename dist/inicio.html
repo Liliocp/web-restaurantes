@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+    <title>Restaurantes-Recomendación</title>
+  </head>
+  <body>
+    <header>
+      <div id="header-home">
+        <nav class="navegacion">
+          <div class="logo">
+            <img src="/img/logo.jpg" alt="logo" />
+            <p class="text-logo">Restaurantes</p>
+          </div>
+          <div class="sign-in">
+            <ul>
+              <li>
+                <a href="recomendados.html" class="text-nav"
+                  >Recomendación de otros</a
+                >
+              </li>
+              <li>
+                <a href="autor" class="text-nav">Recomendación del autor</a>
+              </li>
+            </ul>
+
+            <ul>
+              <li><a href="suscribirse.html" class="btn">sign-in</a></li>
+            </ul>
+          </div>
+        </nav>
+
+        <!-- barra de busqueda -->
+        <section class="content">
+          <h1>Vive la <span>Experiencia</span> Culinaria</h1>
+          <p class="text">
+            Descubre los distintos restaurantes que Tepic tiene para ti y
+            recomienda a otros tus lugares favoritos.
+          </p>
+
+          <form class="search-box">
+            <input type="search" placeholder="buscar restaurante o comida" id="search"/>
+            <button type="submit">Buscar</button>
+          </form>
+        </section>
+
+        <!-- sección de categorias -->
+
+        <section class="categories">
+          <ul>
+            <li><button class="category" data-category="Todos">Todos</button></li>
+            <li><button class= "category" data-category="Cafetería">Cafetería</button></li>
+            <li><button class= "category" data-category="Bar">Bar</button></li>
+            <li><button class= "category" data-category="Desayunos">Desayunos</button></li>
+            <li><button class= "category" data-category="Mariscos">Mariscos</button></li>
+            <li><button class= "category" data-category="Mexicana">Mexicana</button></li>
+            <li><button class= "category" data-category="Cortes">Cortes</button></li>
+            <li><button class= "category" data-category="Postres">Postres</button></li>
+            <li><button class= "category" data-category="Comida Rápida">Comida Rápida</button></li>
+          </ul>
+        </section>
+      </div>
+    </header>
+
+    <h2>Recomendados para ti</h2>
+    <section class="cards">
+      <article class="card">
+        <figure class="card-img">
+          <img src="/img/hyogo.jpg" alt="hyogo-tepic" />
+        </figure>
+
+        <div class="card-content">
+          <h3 class="card-title">Hyōgo</h3>
+          <span class="card-category">Japonés</span>
+          <p class="card-description">
+            Comida japonesa escelente con gran atención al cliente.
+          </p>
+        </div>
+
+        <div class="line"></div>
+
+        <div class="card-location">
+          
+          <span class="location">
+            <i class="fa-solid fa-location-dot fa-1x" aria-hidden="true"></i>Cd. Del Valle, Tepic</span>
+          <span class="horario"><i class="fa-solid fa-clock fa-1x"></i>Abierto desde la 01:30pm</span>
+        </div>
+      </article>
+
+      <article class="card" data-id="1">
+        <figure class="card-img">
+          <img src="/img/loma-42-tepic.jpg" alt="loma42-tepic" />
+        </figure>
+
+        <div class="card-content">
+          <h3 class="card-title">Loma 42</h3>
+          <span class="card-category">Italiana-Mexicana</span>
+          <p class="card-description">Opción apta para veganos.</p>
+        </div>
+
+        <div class="line"></div>
+
+        <div class="card-location">
+          
+          <span class="location">
+            <i class="fa-solid fa-location-dot fa-1x" aria-hidden="true"></i>Loma, Tepic</span>
+          <span class="horario"><i class="fa-solid fa-clock fa-1x"></i>Abierto desde la 01:30pm</span>
+        </div>
+        
+      </article>
+
+      <article class="card">
+        <figure class="card-img">
+          <img src="/img/la-gloria.jpg" alt="lagloria-tepic" />
+        </figure>
+
+        <div class="card-content">
+          <h3 class="card-title">La Gloría</h3>
+          <span class="card-category">Bar</span>
+          <p class="card-description">
+            Lindo ambiente con vista al centro de Tepic.
+          </p>
+        </div>
+
+        <div class="line"></div>
+
+        <div class="card-location">
+          <span class="location">
+            <i class="fa-solid fa-location-dot fa-1x" aria-hidden="true"></i>Av. México Norte 212, Tepic</span>
+          <span class="horario"><i class="fa-solid fa-clock fa-1x"></i>Abierto desde las 07:30am</span>
+        </div>
+      </article>
+    </section>
+
+
+    <section class="modal-overlay" id="modal">
+      
+        <div class="modal">
+          <button class="modal-close" id="cerrarModal">&times;</button>
+
+          <figure class="modal-img">
+            <img id="modalImg" src="" alt="">
+          </figure>
+
+          <div class="modal-content">
+            <h2 class="modal-title" id="modalNombre">Nombre</h2>
+            <span class="modal-category" id="modalCategoria">Categoria</span>
+            <p class="modal-description" id="modalDescripcion">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius veritatis quaerat explicabo iusto placeat harum amet repudiandae? Magnam iusto soluta exercitationem id officia velit nam voluptates reiciendis, dignissimos eaque cumque!</p>
+
+            <div class="modal-info" >
+              <p class="modal-location" id="modalDireccion"> <i class="fa-solid fa-location-dot fa-1x" aria-hidden="true"></i>dirección</p>
+              <p class="modal-hours" id="modalHorario"><i class="fa-solid fa-clock fa-1x"></i>horario</p>
+              <ul>
+                <li>Lunes: 07:00 am - 07:00pm</li>
+                <li>Martes: 07:00 am - 07:00pm</li>
+                <li>Miercoles: 07:00 am - 07:00pm</li>
+                <li>Jueves: 07:00 am - 07:00pm</li>
+                <li>Viernes: 07:00 am - 07:00pm</li>
+                <li>Sábado: 07:00 am - 07:00pm</li>
+                <li>Domingo: cerrado</li>
+              </ul>
+              <p class="modal-phone" id="modalTelefono">311-111-22-33</p>
+              <p class="modal-email" id="modalCorreo">restaurante@gmail.com</p>
+            </div>
+          </div>
+
+          <div class="modal-actions">
+            <button>Como llegar</button>
+          </div>
+        </div>
+    </section>
+
+
+
+
+    <script type="module" src="/js/script.js" defer></script>
+  </body>
+</html>

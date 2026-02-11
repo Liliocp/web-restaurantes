@@ -1,0 +1,438 @@
+@use "variables";
+
+@import url("https://fonts.googleapis.com/css2?family=Abel&family=Edu+NSW+ACT+Cursive:wght@400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=SUSE+Mono:ital,wght@0,100..800;1,100..800&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: variables.$main-color;
+  font-family: "Titillium", "arial";
+}
+
+#header-home {
+  background: url(/img/tepic.jpg) center / cover no-repeat;
+  height: 85vh;
+
+  .navegacion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 12%;
+    width: 100%;
+    border: variables.$border;
+    background: variables.$glass-bg;
+    -webkit-backdrop-filter: blur(variables.$glass-blur);
+    backdrop-filter: blur(variables.$glass-blur);
+    isolation: isolate;
+
+    .logo {
+      display: flex;
+      width: 20%;
+      justify-content: space-around;
+      align-items: center;
+      margin: 1rem;
+
+      img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+      }
+
+      .text-logo {
+        color: variables.$text-color;
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  .sign-in {
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+
+    ul {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .text-nav {
+      text-decoration: none;
+      color: variables.$text-color;
+      font-size: 1.3rem;
+
+      &:hover {
+        color: variables.$secundary-color;
+      }
+    }
+
+    li {
+      list-style: none;
+    }
+
+    .btn {
+      display: inline-flex;
+      padding: 1rem 2rem;
+      text-decoration: none;
+      color: variables.$text-color;
+      font-size: 1.2rem;
+      font-family: "Roboto Mono";
+      border-radius: variables.$border-radius;
+      background: variables.$secundary-color;
+
+      &:hover {
+        background: variables.$hover-color;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .content {
+    width: 60%;
+    margin: 10rem auto 12rem auto;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 1.2rem;
+    color: variables.$text-color;
+
+    h1 {
+      font-size: 5rem;
+
+      span {
+        font-family: "Times New Roman", Times, serif;
+        font-style: italic;
+        font-weight: 600;
+      }
+    }
+
+    .text {
+      font-size: 1.5rem;
+      font-style: italic;
+    }
+
+    .search-box {
+      display: flex;
+      gap: 1rem;
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      justify-content: center;
+      position: relative;
+
+      input {
+        margin-top: 3rem;
+        padding: 2rem 1rem;
+        border-radius: variables.$border-radius;
+        border: variables.$border;
+        background: variables.$glass-bg-2;
+        color: variables.$text-color;
+        font-size: 1rem;
+        outline: none;
+        -webkit-backdrop-filter: blur(variables.$glass-blur);
+        backdrop-filter: blur(variables.$glass-blur);
+        width: 90%;
+        box-sizing: border-box;
+
+        &::placeholder {
+          font-style: italic;
+        }
+      }
+
+      button {
+        position: absolute;
+        top: 68%;
+        right: 6%;
+        transform: translateY(-50%);
+        padding: 1.3rem 3rem;
+        border: variables.$border;
+        background: variables.$secundary-color;
+        border-radius: variables.$border-radius;
+        color: variables.$text-color;
+        font-size: 1.5rem;
+        font-weight: 700;
+
+        &:hover {
+          background: variables.$hover-color;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .categories {
+    position: relative;
+    margin-top: 1.7rem;
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      padding: 0;
+      list-style: none;
+    }
+
+    button {
+      background: variables.$main-color;
+      border: variables.$border;
+      border-radius: variables.$border-radius;
+      padding: 1rem 1.5rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      color: variables.$text-color;
+      font-size: 1.5rem;
+
+      &:hover {
+        background: variables.$hover-color;
+      }
+
+      &.active {
+        background: variables.$secundary-color;
+      }
+    }
+  }
+}
+
+h2 {
+  font-size: 2.5rem;
+  color: variables.$text-color;
+  font-style: italic;
+  font-family: "Roboto Mono";
+  margin: 4rem 2rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 0 2rem 4rem;
+  max-width: 1400px;
+  margin: 0 auto;
+
+  .card {
+    background-color: variables.$card-color;
+    border: variables.$border;
+    border-radius: variables.$border-radius;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+      border: 2px solid variables.$secundary-color;
+      cursor: pointer;
+    }
+
+    &-img {
+      width: 100%;
+      height: 180px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+    }
+
+    .line {
+      width: 90%;
+      height: 2px;
+      background: variables.$secundary-color;
+      margin: 1rem auto;
+      flex-shrink: 0;
+    }
+
+    &-content {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      gap: 0.5rem;
+    }
+
+    &-title {
+      font-size: 2.5rem;
+      color: variables.$text-color;
+    }
+
+    &-category {
+      color: variables.$secundary-color;
+      font-style: italic;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+    }
+
+    &-description {
+      color: variables.$text-color;
+      font-size: 1.2rem;
+    }
+
+    &-location {
+      display: flex;
+      flex-direction: column;
+      color: variables.$text-color;
+      gap: 0.4rem;
+      padding: 0 1rem 1.2rem;
+      font-size: 1rem;
+      flex-shrink: 0;
+
+      i {
+        color: variables.$text-color;
+        margin-right: 0.3rem;
+      }
+
+      .location {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+      }
+
+      .horario {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+      }
+    }
+  }
+}
+
+
+
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    display: none;
+  }
+
+  .modal-overlay.active{
+    display: flex;
+  }
+
+  .modal {
+    background: variables.$card-color;
+    border-radius: variables.$border-radius;
+    width: 90%;
+    max-width: 700px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    padding: 2rem;
+
+    &-close {
+      position: absolute;
+      top: 1rem;
+      right: 2rem;
+      background: none;
+      border: variables.$border;
+      border-radius: 50%;
+      padding: 1rem;
+      color: variables.$secundary-color;
+      font-size: 1.5rem;
+
+      &:hover {
+        background: variables.$hover-color;
+        cursor: pointer;
+        color: variables.$text-color;
+      }
+    }
+
+    &-img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: variables.$border-radius;
+      margin-bottom: 1.5rem;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+    }
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    &-title {
+      margin: 0;
+    }
+
+    &-category {
+      color: variables.$secundary-color;
+      font-style: italic;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    &-description {
+      color: variables.$text-color;
+      font-size: 1.5rem;
+      line-height: 1.6;
+    }
+
+    &-info {
+      display: flex;
+      flex-direction: column;
+      color: variables.$text-color;
+      gap: 0.8rem;
+    }
+
+    &-hours, &-location, &-phone, &-email {
+      font-size: 1.2rem;
+    }
+
+    i {
+        margin-right: 0.5rem;
+      }
+
+    ul {
+      display: flex;
+      justify-content: center;
+    }
+
+    li {
+      list-style: none;
+      line-height: 1.6;
+    }
+
+    
+
+    &-actions{
+      margin-top: 2rem;
+      display: flex;
+      gap: 1rem;
+
+      button{
+        flex: 1;
+        padding: 1rem;
+        font-size: 1.5rem;
+        border-radius: variables.$border-radius;
+        cursor: pointer;
+        background: variables.$secundary-color;
+        color: variables.$text-color;
+      }
+    }
+  }
+
